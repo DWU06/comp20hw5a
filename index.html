@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Joe's Hotdogs</title>
+</head>
+
+<body>
+	<script language="javascript">
+		NumHotdogs = prompt("How many hotdogs?", "1");
+		NumFries = prompt("How many fries?", "1");
+		NumSodas = prompt("How many sodas?", "1");
+
+		NumHotdogs = parseInt(NumHotdogs);
+		NumFries = parseInt(NumFries);
+		NumSodas = parseInt(NumSodas);
+
+		HOTDOGCOST = 3.25;
+		FRIESCOST = 2.00;
+		SODACOST = 1.50;
+		DISCOUNT = 0.1;
+		TAXRATE = 0.0625;
+
+		HotdogsSubtotal = NumHotdogs * HOTDOGCOST;
+		FriesSubtotal = NumFries * FRIESCOST;
+		SodasSubtotal = NumSodas * SODACOST;
+
+		Subtotal = HotdogsSubtotal + FriesSubtotal + SodasSubtotal;
+	</script>
+
+		<h1>Welcome to Joe's Hotdogs!</h1>
+		<br><h2>Your Order</h2><br>
+
+	<script language="javascript">
+		document.write("# Hotdogs: " + NumHotdogs + " at $" 
+			+ HOTDOGCOST.toFixed(2) + " is $" + HotdogsSubtotal.toFixed(2) 
+			+ "<br>" + "# Fries: " + NumFries + " at $" + FRIESCOST.toFixed(2) 
+			+ " is $" + FriesSubtotal.toFixed(2) + "<br>" + "# Sodas: " 
+			+ NumSodas + " at $" + SODACOST.toFixed(2) + " is $" 
+			+ SodasSubtotal.toFixed(2) + "<br>");
+
+		if (Subtotal >= 20) 
+		{
+			document.write("You qualified for our 10% discount.<br>");
+			Subtotal *= (1 - DISCOUNT);
+		}
+
+		Tax = Subtotal * TAXRATE;
+		Total = Subtotal + Tax;
+
+		document.write("Subtotal: $" + Subtotal.toFixed(2) + "<br>Meals Tax: $" 
+			+ Tax.toFixed(2) + "<br>Total: $" + Total.toFixed(2));
+	</script>
+</body>
+</html>
